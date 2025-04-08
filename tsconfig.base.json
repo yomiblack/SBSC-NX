@@ -13,8 +13,10 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {}
+    "baseUrl": "../../", // Changed from "." to workspace root
+    "paths": {
+      "@backend-utils/*": ["libs/backend-utils/src/*"] // Added /src for Nx convention
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
