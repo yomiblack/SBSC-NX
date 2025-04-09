@@ -2,7 +2,9 @@
   "name": "@angunext/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx build backend"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",
