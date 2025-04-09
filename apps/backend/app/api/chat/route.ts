@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-// import ChatHistory from '../../../../../../../angunext/libs/backend-utils/chatModel';
 import ChatHistory from '@backend-utils/chatModel';
 import { connectToDatabase } from '@backend-utils/dbConnect';
 import { getCorsHeaders, handleOptionsRequest } from '@backend-utils/cors';

@@ -10,9 +10,7 @@ const nextConfig = {
     svgr: false,
   },
   // Required for Vercel deployment
-  output: 'standalone', // or 'export' if static (no API routes)
-  // Optional: Set basePath if hosted under a subpath (e.g., /api)
-  // basePath: '/api',
+  output: 'standalone',
   webpack: (config, { isServer }) => {
     // Add @backend-utils alias
     config.resolve.alias = {
@@ -21,7 +19,7 @@ const nextConfig = {
     };
     return config;
   },
-  // Fix for API routes in Vercel (if using dynamic routes)
+
   rewrites: async () => [
     {
       source: '/api/:path*',
