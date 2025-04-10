@@ -31,14 +31,30 @@
 // const plugins = [withNx];
 // module.exports = composePlugins(...plugins)(nextConfig);
 
+// const path = require('path');
+
+// const nextConfig = {
+//   output: 'standalone',
+//   // webpack: (config) => {
+//   //   config.resolve.alias = {
+//   //     ...config.resolve.alias,
+//   //     '@backend-utils': path.resolve(__dirname, '../../libs/backend-utils'),
+//   //   };
+//   //   return config;
+//   // },
+// };
+
+// module.exports = nextConfig;
+
+const { withNx } = require('@nx/next');
+
 const nextConfig = {
-  nx: { svgr: false },
-  output: 'standalone',
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@backend-utils': path.resolve(__dirname, '../../libs/backend-utils'),
-    };
-    return config;
+  nx: {
+    svgr: false,
   },
+  output: process.env.VERCEL ? 'standalone' : undefined,
+  // If you need to deploy as static export
+  // output: 'export',
 };
+
+module.exports = withNx(nextConfig);
