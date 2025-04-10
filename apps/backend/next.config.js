@@ -53,8 +53,15 @@ const nextConfig = {
     svgr: false,
   },
   output: process.env.VERCEL ? 'standalone' : undefined,
-  // If you need to deploy as static export
-  // output: 'export',
+  distDir: '../../dist/apps/backend/.next', // Custom output directory for Nx
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*', // Proxy to API routes
+      },
+    ];
+  },
 };
 
 module.exports = withNx(nextConfig);

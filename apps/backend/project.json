@@ -15,6 +15,18 @@
         "output": "standalone"
       }
     },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/backend/**/*.ts", "apps/backend/**/*.tsx"]
+      }
+    },
+    "doctor": {
+      "executor": "@nx/workspace:run-commands",
+      "options": {
+        "command": "npx nx doctor"
+      }
+    },
     "configurations": {
       "production": {
         "output": "export"

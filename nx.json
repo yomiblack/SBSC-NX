@@ -10,7 +10,7 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "67f4dc00b5563e32709eaa45",
+  "nxCloudId": "67f7ec17da8ed058688497c6",
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
       "cache": true,
@@ -25,6 +25,10 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.mjs"
       ]
+    },
+    "build": {
+      "cache": true,
+      "outputs": ["{projectRoot}/dist"]
     }
   },
   "generators": {
@@ -54,6 +58,12 @@
         "serveStaticTargetName": "serve-static",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
       }
     }
   ]
